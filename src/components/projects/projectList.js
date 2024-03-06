@@ -47,6 +47,7 @@ export default function ProjectList() {
                 {projects.map((project, i) => {
                     return (
                         <motion.div
+                            key={i}
                             initial="offscreen"
                             exit="offscreen"
                             whileInView="onscreen"
