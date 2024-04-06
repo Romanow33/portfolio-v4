@@ -29,7 +29,7 @@ export default function Contact(params) {
                         </Stack>
                     </Grid>
                     <Grid xs={12} md={6}>
-                        <form action="mailto:romanowignacio1@gmail.com" method="POST" enctype="text/plain" name="contact" netlify style={{ height: '100%' }}>
+                        <form name="contact" method="post" style={{ height: '100%' }}>
                             <Stack direction={'column'} justifyContent={'center'} alignItems={'flex-start'} padding={10} height={'100%'}>
                                 <label for="nombre" style={{ fontSize: '3rem', textAlign: 'left' }}>Nombre:</label>
                                 <input type="text" id="nombre" name="nombre" required style={{ width: '100%', height: '50px', marginBottom: 20, fontSize: 20, padding: 10, fontWeight: 'lighter' }} />
@@ -49,6 +49,7 @@ export default function Contact(params) {
                                     </Button>
                                 </Stack>
                             </Stack>
+                            <input type="hidden" name="form-name" value="contact" />
                         </form>
                     </Grid>
                 </Grid>

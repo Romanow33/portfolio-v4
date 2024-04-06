@@ -5,6 +5,11 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <body>
+        <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+          <input type="text" id="nombre" name="nombre" required />
+          <input type="text" id="email" name="email" required />
+          <textarea id="mensaje" name="mensaje" required></textarea>
+        </form>
         <Main />
         <NextScript />
       </body>
