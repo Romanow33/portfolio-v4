@@ -106,12 +106,12 @@ export default function Skills() {
             >
                 <Grid container>
                     {SKILLS.map(skill => (
-                        <Grid item md={skill.tittle === 'Other skills' || skill.tittle === 'Soft Skills' ? 12 : 6} xs={12} p={2}>
+                        <Grid item md={skill.tittle === 'Other skills' || skill.tittle === 'Soft Skills' ? 12 : 6} xs={12} p={2} key={skill.tittle}>
                             <Card>
                                 <CardHeader title={skill.tittle} avatar={<skill.icon />} />
                                 <CardContent>
-                                    {skill.skills.map(item => (
-                                        <Chip label={item} sx={{ p: 1, m: 1 }} />
+                                    {skill.skills.map((item, index) => (
+                                        <Chip label={item} sx={{ p: 1, m: 1 }} key={index} />
                                     ))}
                                 </CardContent>
                             </Card>

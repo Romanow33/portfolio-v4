@@ -48,7 +48,7 @@ export default function ProjectList() {
             <Grid container justifyContent={'center'} alignItems={'center'} direction={'row'} pb={10}>
                 {projects.map((project, i) => {
                     return (
-                        <Grid item xs={12} sm={6} md={6} lg={3} p={{ xs: 2, md: 1 }}>
+                        <Grid item xs={12} sm={6} md={6} lg={3} p={{ xs: 2, md: 1 }} key={i}>
                             <motion.div
                                 key={i}
                                 initial="offscreen"
