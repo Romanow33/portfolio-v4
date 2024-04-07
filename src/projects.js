@@ -32,7 +32,7 @@ const projects = [
     {
         tittle: "Pancake Live",
         subtitle: "Video calling and calendar application for online designers",
-        description: "Pancake is a fun and painless virtual experience that brings accessible, affordable and sustainable design for all. Design or re-design spaces in real time, improving people’s lives through professionally designed spaces, promoting happiness, wellness, mental wellbeing and “feel-good” moments that match a budget.",
+        description: "Pancake is a fun and painless virtual experience that brings accessible, affordable and sustainable design for all. Design or re-design spaces in real time.",
         img: pancake,
         appLink: null,
         repo: null

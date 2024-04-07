@@ -17,7 +17,7 @@ export default function Home() {
       </Head>
       <main className={` ${inter.className}`}>
         <AnimatePresence>
-          <Box minHeight={'101vh'}>
+          <Box >
             <BodyController />
           </Box>
         </AnimatePresence>
