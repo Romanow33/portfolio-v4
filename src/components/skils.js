@@ -1,9 +1,7 @@
 import { AutoAwesome, ConnectWithoutContactOutlined, DnsOutlined, PreviewOutlined } from "@mui/icons-material";
 import {
-    Box,
     Grid,
     Stack,
-    Typography,
     Card,
     CardHeader,
     CardContent,

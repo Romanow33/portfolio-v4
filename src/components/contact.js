@@ -51,7 +51,7 @@ export default function Contact(params) {
                 paddingTop: 20
             }}>
                 <Grid container sx={{ height: '100%' }}>
-                    <Grid xs={12} md={6}>
+                    <Grid item xs={12} md={6}>
                         <Stack direction={'column'} justifyContent={'center'} alignItems={'center'} padding={{ md: 10, xs: 4 }} height={'100%'}>
                             <motion.h1 variant='body2' style={{ fontSize: '2rem' }}>
                                 If you need someone responsible who can work without supervision, who you can delegate work or trust with your ideas, contact me!
@@ -62,7 +62,7 @@ export default function Contact(params) {
                             </motion.h2>
                         </Stack>
                     </Grid>
-                    <Grid xs={12} md={6}>
+                    <Grid item xs={12} md={6}>
                         <AnimatePresence>
                             {!submitted ? <form style={{ height: '100%' }} onSubmit={handleSubmit} >
                                 <Stack direction={'column'} justifyContent={'center'} alignItems={'flex-start'} padding={{ md: 10, xs: 4 }} height={'100%'}>

@@ -23,7 +23,8 @@ export default function ProjectCard({ project }) {
         >
             <Image
                 src={project.img}
-                title="green iguana"
+                title={`Project image - ${project.tittle}`}
+                alt={`Project image - ${project.tittle}`}
                 style={{
                     width: "100%",
                     height: 'auto',

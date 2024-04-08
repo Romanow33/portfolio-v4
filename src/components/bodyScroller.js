@@ -27,7 +27,7 @@ export default function BodyController() {
             <Contact />
             <footer>
                 <Stack p={2}>
-                    <Link href="https://www.linkedin.com/in/ignacio-romanow/" target="_blank" sx={{ color: "black", textAlign: 'center' }} variant="caption">
+                    <Link href="https://linkedin.com/in/ignacio-romanow/" target="_blank" sx={{ color: "black", textAlign: 'center' }} variant="caption">
                         @IRomanow {new Date().getFullYear()}
                     </Link>
                 </Stack>
