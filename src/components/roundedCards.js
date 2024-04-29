@@ -1,27 +1,20 @@
 import { Divider, Fab, Link, Stack, Typography } from "@mui/material";
-import {
-    motion, useInView,
-} from "framer-motion";
 import GroupsIcon from '@mui/icons-material/Groups';
 import StoreIcon from '@mui/icons-material/Store';
-import { useRef } from "react";
 import { Email } from "@mui/icons-material";
 
-
-
-
 export default function RoundedCards() {
-    const ref = useRef()
-    const isInView = useInView(ref)
-
     return (
-        <Stack justifyContent={'space-evenly'} alignItems={'center'} ref={ref} itemRef={ref}
+        <Stack
+            justifyContent={'space-evenly'}
+            alignItems={'center'}
             sx={{
-                backgroundSize: isInView ? '2000%' : '100%',
-                backgroundColor: isInView ? 'gray' : 'transparent',
+                backgroundColor: 'gray',
                 transition: 'all ease .5s',
-                minHeight: '110vh'
+                minHeight: '110vh',
+                height: '100vh'
             }}
+            component={'div'}
         >
             <motion.h2 style={{
                 fontSize: '3rem',
