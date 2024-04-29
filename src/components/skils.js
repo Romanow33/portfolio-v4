@@ -109,7 +109,8 @@ export default function Skills() {
                                 sx={{
                                     borderRadius: '10px',
                                     backgroundColor: "transparent",
-                                    border: "1px solid gray"
+                                    border: "1px solid gray",
+                                    minHeight: skill.tittle === 'Other skills' ? 'auto' : 200
                                 }}
                             >
                                 <CardHeader title={skill.tittle} avatar={<skill.icon />} />

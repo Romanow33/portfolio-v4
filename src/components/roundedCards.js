@@ -19,12 +19,12 @@ export default function RoundedCards() {
             sx={{
                 backgroundImage: isInView ? 'linear-gradient(270deg, rgba(255,255,255,1) 81%, rgba(40,40,40,1) 100%)' : 'linear-gradient(270deg, rgba(255,255,255,1) 81%, rgba(40,40,40,1) 100%)',
                 backgroundSize: isInView ? '2000%' : '100%',
-                transition: 'all ease 3s',
+                transition: 'all ease .3s',
             }}
         >
             <motion.h2 style={{
                 fontSize: '3rem',
-                transition: 'all ease 3s',
+                transition: 'all ease .3s',
                 color: isInView ? 'white' : 'black',
                 textAlign: "center",
             }}>
