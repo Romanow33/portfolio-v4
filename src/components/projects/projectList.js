@@ -27,11 +27,10 @@ export default function ProjectList() {
     const ref = useRef(null);
     const isInView = useInView(ref)
 
-
     return (
-        <Stack component={'section'} justifyContent={'center'} alignItems={'center'} ref={ref}>
+        <Stack component={'section'} justifyContent={'center'} alignItems={'center'} ref={ref} height={'100vh'}>
             <motion.h2 style={{
-                fontSize: '10vw',
+                fontSize: '3rem',
                 backgroundImage: isInView ? 'linear-gradient(270deg, rgba(255,255,255,1) 81%, rgba(40,40,40,1) 100%)' : 'linear-gradient(270deg, rgba(255,255,255,1) 81%, rgba(40,40,40,1) 100%)',
                 backgroundSize: isInView ? '2000%' : '100%',
                 WebkitTextFillColor: 'transparent',
@@ -40,12 +39,12 @@ export default function ProjectList() {
                 color: 'transparent',
                 transition: 'all ease 3s',
                 textAlign: "center",
-                paddingBottom: 40
+                pb: 80
 
             }}>
-                Look at My Latest Works
+                Look at my latest works
             </motion.h2>
-            <Grid container justifyContent={'center'} alignItems={'center'} direction={'row'} pb={10}>
+            <Grid container justifyContent={'center'} alignItems={'center'} direction={'row'} py={10}>
                 {projects.map((project, i) => {
                     return (
                         <Grid item xs={12} sm={6} md={6} lg={3} p={{ xs: 2, md: 1 }} key={i}>
@@ -54,7 +53,7 @@ export default function ProjectList() {
                                 initial="offscreen"
                                 exit="offscreen"
                                 whileInView="onscreen"
-                                viewport={{ once: false, amount: 0.8 }}
+                                viewport={{ once: false, amount: 0.3 }}
                                 custom={i}
                                 style={{ width: "100%", display: "flex", justifyContent: "center" }}
                                 variants={variants}
@@ -72,7 +71,7 @@ export default function ProjectList() {
                 initial="offscreen"
                 exit="offscreen"
                 whileInView="onscreen"
-                viewport={{ once: false, amount: 0.8 }}
+                viewport={{ once: false, amount: 0.3 }}
                 custom={5}
                 style={{ width: "100%", display: "flex", justifyContent: "center" }}
                 variants={variants}
@@ -86,9 +85,11 @@ export default function ProjectList() {
                             height: '100px',
                             borderRadius: '10px',
                             padding: 8,
-                            cursor: 'pointer'
+                            cursor: 'pointer',
+                            backgroundColor: "transparent",
+                            border: "1px solid gray"
                         }}
-                        elevation={4}
+                        elevation={1}
                     >
                         <Stack justifyContent={'center'} alignItems={'center'} height={'100%'}>
                             <Typography variant="h6">

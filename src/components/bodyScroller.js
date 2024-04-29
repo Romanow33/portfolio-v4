@@ -1,10 +1,9 @@
-import { Stack, Typography, Link } from "@mui/material";
+import { Stack, Link } from "@mui/material";
 import HeaderCard from "./header";
 import RoundedCards from "./roundedCards";
 import ProjectList from "./projects/projectList";
 import Skills from "./skils";
 import Contact from "./contact";
-
 
 export default function BodyController() {
     return (
@@ -14,9 +13,6 @@ export default function BodyController() {
                 width={'100%'}
                 justifyContent={'center'}
                 alignContent={'center'}
-                rowGap={20}
-                px={{ lg: 10, md: 3, xs: 1 }}
-                py={{ lg: 10, md: 3, xs: 1 }}
                 mb={20}
             >
                 <HeaderCard />

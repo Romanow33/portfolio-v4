@@ -17,9 +17,11 @@ export default function ProjectCard({ project }) {
                 display: 'flex',
                 justifyContent: 'space-between',
                 flexDirection: 'column',
-                borderRadius: '10px'
+                borderRadius: '10px',
+                backgroundColor: "transparent",
+                border: "1px solid gray"
             }}
-            elevation={4}
+            elevation={2}
         >
             <Image
                 src={project.img}
@@ -28,12 +30,12 @@ export default function ProjectCard({ project }) {
                 style={{
                     width: "100%",
                     height: 'auto',
-                    objectFit: 'contain',
+                    objectFit: 'cover',
                     minHeight: 200,
                     maxHeight: 200
                 }}
             />
-            <CardContent>
+            <CardContent sx={{ color: "black" }}>
                 <Typography gutterBottom variant="h5" component="div">
                     {project.tittle}
                 </Typography>
