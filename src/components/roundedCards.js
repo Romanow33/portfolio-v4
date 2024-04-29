@@ -2,6 +2,7 @@ import { Divider, Fab, Link, Stack, Typography } from "@mui/material";
 import GroupsIcon from '@mui/icons-material/Groups';
 import StoreIcon from '@mui/icons-material/Store';
 import { Email } from "@mui/icons-material";
+import { motion } from 'framer-motion'
 
 export default function RoundedCards() {
     return (
@@ -16,12 +17,13 @@ export default function RoundedCards() {
             }}
             component={'div'}
         >
-            <motion.h2 style={{
-                fontSize: '3rem',
-                transition: 'all ease .5s',
-                color: 'white',
-                textAlign: "center",
-            }}>
+            <motion.h2
+                style={{
+                    fontSize: '3rem',
+                    transition: 'all ease .5s',
+                    color: 'white',
+                    textAlign: "center",
+                }}>
                 What do I contribute to
             </motion.h2>
 

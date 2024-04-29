@@ -1,5 +1,4 @@
-import { ThemeContext, useTheme } from '@emotion/react';
-import { Button, Grid, Stack, CircularProgress, Alert, useMediaQuery } from '@mui/material';
+import { Button, Grid, Stack, CircularProgress, useMediaQuery } from '@mui/material';
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react';
 
