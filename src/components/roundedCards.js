@@ -15,17 +15,18 @@ export default function RoundedCards() {
     const isInView = useInView(ref)
 
     return (
-        <Stack component={'section'} justifyContent={'space-evenly'} alignItems={'center'} ref={ref} minHeight={'100vh'}
+        <Stack justifyContent={'space-evenly'} alignItems={'center'} ref={ref} itemRef={ref}
             sx={{
-                backgroundImage: isInView ? 'linear-gradient(270deg, rgba(255,255,255,1) 81%, rgba(40,40,40,1) 100%)' : 'linear-gradient(270deg, rgba(255,255,255,1) 81%, rgba(40,40,40,1) 100%)',
                 backgroundSize: isInView ? '2000%' : '100%',
-                transition: 'all ease .3s',
+                backgroundColor: isInView ? 'gray' : 'transparent',
+                transition: 'all ease .5s',
+                minHeight: '110vh'
             }}
         >
             <motion.h2 style={{
                 fontSize: '3rem',
-                transition: 'all ease .3s',
-                color: isInView ? 'white' : 'black',
+                transition: 'all ease .5s',
+                color: 'white',
                 textAlign: "center",
             }}>
                 What do I contribute to
@@ -58,24 +59,26 @@ export default function RoundedCards() {
                     </Stack>
                 </Stack>
             </Stack>
-            <Link href="#contact-section">
-                <Fab
-                    size="large"
-                    variant="extended"
-                    mt={2}
-                    sx={{
-                        fontSize: '1vw',
-                        width: "15vw",
-                        height: "5vw",
-                        backgroundColor: '#ffe6c1', color: "black",
-                        "&:hover": {
-                            backgroundColor: 'gray', color: "#ffe6c1",
-                        }
-                    }}
-                >
-                    Contact <Email sx={{ ml: 2 }} />
-                </Fab>
-            </Link>
+            <Stack justifyContent={'center'} alignItems={'center'}>
+                <Link href="#contact-section">
+                    <Fab
+                        size="large"
+                        variant="extended"
+                        mt={2}
+                        sx={{
+                            fontSize: '1vw',
+                            width: "15vw",
+                            height: "5vw",
+                            backgroundColor: '#ffe6c1', color: "black",
+                            "&:hover": {
+                                backgroundColor: 'gray', color: "#ffe6c1",
+                            }
+                        }}
+                    >
+                        Contact <Email sx={{ ml: 2 }} />
+                    </Fab>
+                </Link>
+            </Stack>
         </Stack>
     )
 }

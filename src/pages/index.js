@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Amaranth } from "next/font/google";
-import { Box, ThemeProvider, createTheme } from "@mui/material";
+import { Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { AnimatePresence, } from "framer-motion";
 import BodyController from "@/components/bodyScroller";
 
@@ -37,6 +37,7 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></link>
       </Head>
       <main className={` ${inter.className}`} style={{ scrollBehavior: 'smooth' }}>
+        <CssBaseline />
         <AnimatePresence>
           <ThemeProvider theme={theme}>
             <Box>
