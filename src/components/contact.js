@@ -1,10 +1,10 @@
 import { Button, Grid, Stack, CircularProgress, useMediaQuery } from '@mui/material';
-import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react';
+import { Element } from 'react-scroll';
 
-export default function Contact(params) {
+export default function Contact() {
     const ref = useRef(null);
-    const isInView = useInView(ref)
     const [loading, setLoading] = useState(false)
     const [submitted, setSubmitted] = useState(false)
     const [msg, setMsg] = useState('')
@@ -41,71 +41,72 @@ export default function Contact(params) {
     };
 
     return (
-        <motion.section style={{ height: 'auto', width: '50vh' }} ref={ref} id='contact-section'>
-            <motion.div style={{
-                minHeight: '100vh',
-                width: '100vw',
-                backgroundColor: isInView ? "white" : '#ffe6c1',
-                transition: 'all ease 3s',
-                paddingTop: 20
-            }}>
-                <Grid container sx={{ height: '100%' }}>
-                    <Grid item xs={12} md={6}>
-                        <Stack direction={'column'} justifyContent={'center'} alignItems={'center'} padding={{ md: 10, xs: 4 }} height={'100%'}>
-                            <motion.h1 variant='body2' style={{ fontSize: '2rem' }}>
-                                If you need someone responsible who can work without supervision, who you can delegate work or trust with your ideas, contact me!
-                            </motion.h1>
-                            <motion.h2 variant='body1' style={{ marginTop: matches ? '5rem' : '3rem' }}>
-                                If you need any special technology that is not detailed, contact me.<br />
-                                I may know it.
-                            </motion.h2>
-                        </Stack>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <AnimatePresence>
-                            {!submitted ? <form style={{ height: '100%' }} onSubmit={handleSubmit} >
-                                <Stack direction={'column'} justifyContent={'center'} alignItems={'flex-start'} padding={{ md: 10, xs: 4 }} height={'100%'}>
-                                    <label for="nombre" style={{ fontSize: '3rem', textAlign: 'left' }}>Your Name:</label>
-                                    <input type="text" id="nombre" name="nombre" required style={{ width: '100%', height: '50px', marginBottom: 20, fontSize: 20, padding: 10, fontWeight: 'lighter' }} />
-                                    <label for="email" style={{ fontSize: '3rem', textAlign: 'left' }}>Email:</label>
-                                    <input type="text" id="email" name="email" required style={{ width: '100%', height: '50px', marginBottom: 20, fontSize: 20, padding: 10, fontWeight: 'lighter' }} />
-                                    <label for="email" style={{ fontSize: '3rem', textAlign: 'left' }}>Message:</label>
-                                    <textarea id="mensaje" name="mensaje" required style={{ width: '100%', height: '150px', marginBottom: 20, fontSize: 20, padding: 10, fontWeight: 'lighter' }}></textarea>
-                                    <Stack width={'100%'}>
-                                        <Button
-                                            type='submit'
-                                            variant='contained'
-                                            disabled={loading}
-                                            sx={{
-                                                backgroundColor: '#ffe6c1', color: "gray",
-                                                "&:hover": {
-                                                    backgroundColor: 'gray', color: "white",
-                                                }
-                                            }}>
-                                            {!loading ? 'Contact now' : <CircularProgress sx={{ color: "gray" }} />}
-                                        </Button>
-                                    </Stack>
-                                </Stack>
-                            </form> :
-                                <Stack direction={'column'} justifyContent={'center'} alignItems={'flex-start'} padding={{ md: 10, xs: 4 }} height={'100%'} >
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                    >
-                                        <motion.h1
-                                            variant='body2'
-                                            style={{ fontSize: '2rem', color: error ? 'red' : 'green' }}
-                                        >
-                                            {msg}
-                                        </motion.h1>
-                                    </motion.div>
-                                </Stack>
-                            }
-                        </AnimatePresence>
-                    </Grid>
+        <Stack
+            component={'section'}
+            rowGap={8}
+            minHeight={'100vh'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            py={8}
+            width={'100vw'}
+            ref={ref}
+            id="contact-section"
+        >
+            <Grid container sx={{ height: '100%' }}>
+                <Grid item xs={12} md={6}>
+                    <Stack direction={'column'} justifyContent={'center'} alignItems={'center'} padding={{ md: 10, xs: 4 }} height={'100%'}>
+                        <motion.h1 variant='body2' style={{ fontSize: '2rem' }}>
+                            If you need someone responsible, contact me.
+                        </motion.h1>
+                        <motion.h2 variant='body1' style={{ marginTop: matches ? '5rem' : '3rem' }}>
+                            Also consult for technologies that are not detailed above.
+                        </motion.h2>
+                    </Stack>
                 </Grid>
-            </motion.div>
-        </motion.section >
+                <Grid item xs={12} md={6}>
+                    <AnimatePresence>
+                        {!submitted ? <form style={{ height: '100%' }} onSubmit={handleSubmit} >
+                            <Stack direction={'column'} justifyContent={'center'} alignItems={'flex-start'} padding={{ md: 10, xs: 4 }} height={'100%'}>
+                                <label for="nombre" style={{ fontSize: '1.5rem', textAlign: 'left' }}>Full Name:</label>
+                                <input type="text" id="nombre" name="nombre" required style={{ width: '100%', height: '50px', marginBottom: 20, fontSize: 20, padding: 10, fontWeight: 'lighter' }} />
+                                <label for="email" style={{ fontSize: '1.5rem', textAlign: 'left' }}>Email:</label>
+                                <input type="text" id="email" name="email" required style={{ width: '100%', height: '50px', marginBottom: 20, fontSize: 20, padding: 10, fontWeight: 'lighter' }} />
+                                <label for="email" style={{ fontSize: '1.5rem', textAlign: 'left' }}>Message:</label>
+                                <textarea id="mensaje" name="mensaje" required style={{ width: '100%', height: '150px', marginBottom: 20, fontSize: 20, padding: 10, fontWeight: 'lighter' }}></textarea>
+                                <Stack width={'100%'}>
+                                    <Button
+                                        type='submit'
+                                        variant='contained'
+                                        disabled={loading}
+                                        sx={{
+                                            backgroundColor: '#ffe6c1', color: "gray",
+                                            "&:hover": {
+                                                backgroundColor: 'gray', color: "white",
+                                            }
+                                        }}>
+                                        {!loading ? 'Contact now' : <CircularProgress sx={{ color: "gray" }} />}
+                                    </Button>
+                                </Stack>
+                            </Stack>
+                        </form> :
+                            <Stack direction={'column'} justifyContent={'center'} alignItems={'flex-start'} padding={{ md: 10, xs: 4 }} height={'100%'} >
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                >
+                                    <motion.h1
+                                        variant='body2'
+                                        style={{ fontSize: '2rem', color: error ? 'red' : 'green' }}
+                                    >
+                                        {msg}
+                                    </motion.h1>
+                                </motion.div>
+                            </Stack>
+                        }
+                    </AnimatePresence>
+                </Grid>
+            </Grid>
+        </Stack >
     )
 }

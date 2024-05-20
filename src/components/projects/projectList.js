@@ -1,7 +1,7 @@
 import { Card, Stack, Typography, Grid } from "@mui/material";
 import ProjectCard from "./projectCard";
 import projects from "@/projects";
-import { motion, useInView } from 'framer-motion'
+import { color, motion, useInView } from 'framer-motion'
 import { useRef } from "react";
 import Link from "next/link";
 import { GitHub } from "@mui/icons-material";
@@ -24,27 +24,26 @@ export default function ProjectList() {
         }),
     }
 
-    const ref = useRef(null);
-    const isInView = useInView(ref)
 
     return (
-        <Stack component={'section'} justifyContent={'center'} alignItems={'center'} ref={ref} height={'100vh'}>
-            <motion.h2 style={{
-                fontSize: '3rem',
-                backgroundImage: isInView ? 'linear-gradient(270deg, rgba(255,255,255,1) 81%, rgba(40,40,40,1) 100%)' : 'linear-gradient(270deg, rgba(255,255,255,1) 81%, rgba(40,40,40,1) 100%)',
-                backgroundSize: isInView ? '2000%' : '100%',
-                WebkitTextFillColor: 'transparent',
-                MozBackgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-                transition: 'all ease 3s',
-                textAlign: "center",
-                pb: 80
-
-            }}>
+        <Stack
+            component={'section'}
+            rowGap={8}
+            minHeight={'100vh'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            py={8}
+            width={'100vw'}
+        >
+            <Typography
+                variant="h4"
+                fontWeight={200}
+                textAlign={'center'}
+                color={'gray'}
+            >
                 Look at my latest works
-            </motion.h2>
-            <Grid container justifyContent={'center'} alignItems={'center'} direction={'row'} py={10}>
+            </Typography>
+            <Grid container justifyContent={'center'} alignItems={'center'} direction={'row'} >
                 {projects.map((project, i) => {
                     return (
                         <Grid item xs={12} sm={6} md={6} lg={3} p={{ xs: 2, md: 1 }} key={i}>
@@ -84,7 +83,7 @@ export default function ProjectList() {
                             width: '100%',
                             height: '100px',
                             borderRadius: '10px',
-                            padding: 8,
+                            padding: 4,
                             cursor: 'pointer',
                             backgroundColor: "transparent",
                             border: "1px solid gray"
@@ -100,6 +99,6 @@ export default function ProjectList() {
                     </Card>
                 </Link>
             </motion.div>
-        </Stack>
+        </Stack >
     )
 }

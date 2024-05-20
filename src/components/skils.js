@@ -5,7 +5,8 @@ import {
     Card,
     CardHeader,
     CardContent,
-    Chip
+    Chip,
+    Typography
 } from "@mui/material";
 import { motion, useInView } from 'framer-motion'
 import { useRef } from "react";
@@ -74,49 +75,42 @@ const SKILLS = [
 
 
 export default function Skills() {
-    const ref = useRef(null);
-    const isInView = useInView(ref)
 
     return (
-        <Stack direction={'column'} justifyContent={{ sm: 'space-evenly', xs: 'space-evenly' }} alignItems={'center'} minHeight={'100vh'} ref={ref}>
-            <motion.h2
-                style={{
-                    fontSize: '3rem',
-                    backgroundImage: isInView ? 'linear-gradient(270deg, rgba(255,255,255,1) 81%, rgba(40,40,40,1) 100%)' : 'linear-gradient(270deg, rgba(255,255,255,1) 81%, rgba(40,40,40,1) 100%)',
-                    backgroundSize: isInView ? '2000%' : '100%',
-                    WebkitTextFillColor: 'transparent',
-                    MozBackgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    color: 'transparent',
-                    transition: 'all ease 3s',
-                    textAlign: "center",
-                    pb: 80
-                }}>
-
-                My Skills
-            </motion.h2>
-            <motion.div
-                style={{
-                    visibility: isInView ? 'visible' : 'hidden',
-                    opacity: isInView ? 1 : 0,
-                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
-                }}
+        <Stack
+            component={'section'}
+            rowGap={8}
+            minHeight={'100vh'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            py={8}
+            width={'100vw'}
+            backgroundColor={'gray'}
+        >
+            <Typography
+                variant="h4"
+                fontWeight={200}
+                textAlign={'center'}
+                color={'whitesmoke'}
             >
+                Skills and technologies I know
+            </Typography>
+            <motion.div >
                 <Grid container>
                     {SKILLS.map(skill => (
-                        <Grid item md={skill.tittle === 'Other skills' ? 12 : 4} xs={12} p={2} key={skill.tittle}>
+                        <Grid item xs={12} md={6} p={2} key={skill.tittle}>
                             <Card
                                 sx={{
                                     borderRadius: '10px',
                                     backgroundColor: "transparent",
-                                    border: "1px solid gray",
+                                    border: "1px solid white",
                                     minHeight: skill.tittle === 'Other skills' ? 'auto' : 200
                                 }}
                             >
-                                <CardHeader title={skill.tittle} avatar={<skill.icon />} />
+                                <CardHeader title={skill.tittle} avatar={<skill.icon />} sx={{ color: "white" }} />
                                 <CardContent>
                                     {skill.skills.map((item, index) => (
-                                        <Chip label={item} sx={{ p: 1, m: 1 }} key={index} color="secondary" />
+                                        <Chip label={item} sx={{ p: 1, m: 1, fontSize: "1.5rem" }} key={index} color="secondary" />
                                     ))}
                                 </CardContent>
                             </Card>

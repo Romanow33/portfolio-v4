@@ -40,9 +40,7 @@ export default function Home() {
         <CssBaseline />
         <AnimatePresence>
           <ThemeProvider theme={theme}>
-            <Box>
-              <BodyController />
-            </Box>
+            <BodyController />
           </ThemeProvider>
         </AnimatePresence>
       </main >
