@@ -42,7 +42,7 @@ export default function RoundedCards() {
                 <Stack color={'white'}>
                     <Stack direction={'column'} justifyContent={'flex-start'} alignItems={'center'} pb={4}>
                         <GroupsIcon color="disabled" sx={{ fontSize: { xs: '2.3rem', md: "5rem" }, color: 'white' }} />
-                        <Typography variant="button" fontSize={{ xs: '1rem', md: "1.5rem" }} color={'white'}>Your product</Typography>
+                        <Typography variant="button" fontSize={{ xs: '1rem', md: "1.5rem" }} color={'white'}>Your Team</Typography>
                     </Stack>
                     <Stack justifyContent={'space-around'} alignItems={'center'} height={'100%'} px={4}>
                         <Typography variant="h6" color={theme => theme.palette.getContrastText} textAlign={'center'} mb={2}>
